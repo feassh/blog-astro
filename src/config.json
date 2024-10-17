@@ -99,6 +99,13 @@
   },
   "analytics": {
     "enable": true,
+    "google": {
+      "measurementId": ""
+    },
+    "umami": {
+      "serverUrl": "",
+      "websiteId": ""
+    },
     "microsoftClarity": {
       "projectId": "ok0broygmb"
     }
