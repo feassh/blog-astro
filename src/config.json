@@ -3,7 +3,7 @@
     "url": "https://i.woc.cool",
     "title": "feassh",
     "description": "feassh's blog",
-    "keywords": "blog,博客,feassh",
+    "keywords": "博客,blog,feassh",
     "lang": "zh-CN",
     "favicon": "/favicon.ico",
     "appleTouchIcon": "/apple-touch-icon.png"
@@ -11,7 +11,7 @@
   "author": {
     "name": "feassh",
     "twitterId": "",
-    "avatar": "/favicon.ico"
+    "avatar": "/avatar.jpg"
   },
   "hero": {
     "name": "feassh",
