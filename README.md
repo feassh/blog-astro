@@ -1,9 +1,5 @@
 # Typography
 
-<p align='center'>
-  <img src='./public/typograph-og.jpg' alt='Typography' width='600'/>
-</p>
-
 <h6 align='center'>
 <a href="https://astro-theme-typography.vercel.app/">Live Demo</a>
 </h6>
