@@ -30,6 +30,8 @@
 - [Live Demo](https://astro-theme-typography.vercel.app/)
 - [My Blog](https://blog.moeyua.com/)
 - [Julyfun's Blog (how to fully build this blog using `bun` in minutes)](https://julyfun.fun/posts/%E5%85%89%E9%80%9F%E6%90%AD%E5%BB%BA%E8%BF%99%E6%A0%B7%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/)
+- [Jinx's Blog](https://blog.mytest.cc/)
+- [Unconventional Reading Notes](https://books.beyondxin.top/)
 
 ## Getting Started
 
@@ -60,7 +62,7 @@ description: "description"
 Or, you can use the following command in your terminal to create a new post:
 
 ```bash
-pnpm new-post
+pnpm theme:create
 ```
 
 ## Updating the theme
@@ -111,7 +113,7 @@ And then add the corresponding page in `src/pages`, see more in [Astro Pages](ht
 Typography supports dark mode. You can change it in the config file:
 
 ```ts
-themeStyle: 'dark' // 'light' | 'dark'
+themeStyle: 'dark' // 'light' | 'dark' | 'system'
 ```
 
 ### Internationalization (i18n)
@@ -128,6 +130,7 @@ For now, Typography supports below languages:
 - `zh-cn`
 - `zh-tw`
 - `ja-jp`
+- `it-it`
 
 You can see all supported languages in [src/i18n.ts](src/i18n.ts), and add more if you need.
 

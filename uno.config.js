@@ -1,11 +1,10 @@
-import type { Theme } from 'unocss/preset-uno'
 import presetAttributify from '@unocss/preset-attributify'
 import transformerDirectives from '@unocss/transformer-directives'
 import {
   defineConfig,
   presetIcons,
   presetTypography,
-  presetUno,
+  presetWind3,
   transformerVariantGroup,
 } from 'unocss'
 import presetTheme from 'unocss-preset-theme'
@@ -55,11 +54,11 @@ export default defineConfig({
     ],
   ],
   presets: [
-    presetUno(),
+    presetWind3(),
     presetTypography({ cssExtend }),
     presetAttributify(),
     presetIcons({ scale: 1.2, warn: true }),
-    presetTheme<Theme>({
+    presetTheme ({
       theme: {
         dark: {
           colors: { ...colorsDark, shadow: '#FFFFFF0A' },

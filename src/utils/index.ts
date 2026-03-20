@@ -1,8 +1,8 @@
+import type { Post } from '~/types'
 import { getCollection } from 'astro:content'
 import dayjs from 'dayjs'
 import MarkdownIt from 'markdown-it'
 import sanitizeHtml from 'sanitize-html'
-import type { Post } from '~/types'
 
 export async function getCategories() {
   const posts = await getPosts()
@@ -21,11 +21,24 @@ export async function getCategories() {
   return categories
 }
 
-export async function getPosts() {
+export async function getPosts(isArchivePage = false) {
   const posts = await getCollection('posts')
+
   posts.sort((a, b) => {
-    return dayjs(a.data.pubDate).isBefore(dayjs(b.data.pubDate)) ? 1 : -1
+    if (isArchivePage) {
+      return dayjs(a.data.pubDate).isBefore(dayjs(b.data.pubDate)) ? 1 : -1
+    }
+
+    const aDate = a.data.modDate ? dayjs(a.data.modDate) : dayjs(a.data.pubDate)
+    const bDate = b.data.modDate ? dayjs(b.data.modDate) : dayjs(b.data.pubDate)
+
+    return aDate.isBefore(bDate) ? 1 : -1
   })
+
+  if (import.meta.env.PROD) {
+    return posts.filter(post => post.data.draft !== true)
+  }
+
   return posts
 }
 
@@ -35,7 +48,7 @@ export function getPostDescription(post: Post) {
     return post.data.description
   }
 
-  const html = parser.render(post.body)
+  const html = parser.render(post.body || '')
   const sanitized = sanitizeHtml(html, { allowedTags: [] })
   return sanitized.slice(0, 400)
 }

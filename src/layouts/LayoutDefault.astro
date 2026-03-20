@@ -6,6 +6,7 @@ import SiteTitle from '~/components/SiteTitle.astro'
 import SiteSeo from '~/components/SiteSeo.astro'
 import LaTeX from '~/components/LaTeX.astro'
 import Analytics from '~/components/Analytics.astro'
+import ThemeScript from '~/components/ThemeScript.astro'
 import '~/styles/global.css'
 
 const lang = themeConfig.appearance.locale ?? 'zh-cn'
@@ -15,11 +16,16 @@ const dark = themeConfig.appearance.theme === 'dark'
 <html lang={lang} class:list={['animation-prepared', { dark }]}>
   <head>
     <!-- 异步加载 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet" media="bogus">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+      media="bogus"
+    />
 
     <slot name="seo"> <SiteSeo /> </slot>
     <LaTeX />
     <Analytics />
+    <ThemeScript />
   </head>
 
   <body
@@ -103,6 +109,6 @@ const dark = themeConfig.appearance.theme === 'dark'
       }
     </style>
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet" />
   </body>
 </html>
