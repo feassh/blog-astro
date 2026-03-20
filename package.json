@@ -7,9 +7,6 @@
   "author": "Moeyua <mail@moeyua.com> (https://github.com/moeyua/)",
   "license": "MIT",
   "repository": "https://github.com/moeyua/astro-theme-typography",
-  "engines": {
-    "node": "22.x"
-  },
   "scripts": {
     "dev": "astro check && astro dev",
     "build": "astro check && astro build",
